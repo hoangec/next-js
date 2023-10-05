@@ -24,12 +24,12 @@ const DUMMY_MEETUPS = [
 
 const HomePage = (props) => {
   return (
-    <>∏
+    <>
       <Head>
         <meta name="description" content="Free Web tutorials" />
         <title>Meetups Application </title>
       </Head>
-      <MeetupList meetups={props.meetups} />;
+      <MeetupList meetups={props.meetups} />
     </>
   );
 };
