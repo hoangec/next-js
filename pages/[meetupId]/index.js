@@ -2,7 +2,12 @@ import MeetupDetail from "../../components/meetups/MeetupDetail";
 import { MongoClient, ObjectId } from "mongodb";
 const mongoURI =
   "mongodb+srv://vohoangec:o48ErCHMi8m8v6YS@cluster0.jd01jtz.mongodb.net/meetups?retryWrites=true&w=majority";
+import { useRouter } from "next/router";
 const MeetupDetailPage = (props) => {
+  const router = useRouter()
+  if (router.isFallback) {
+    return <div>Loading...</div>
+  }
   return (
     <MeetupDetail
       image={props.meetupData.image}
