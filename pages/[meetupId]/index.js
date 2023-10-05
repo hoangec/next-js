@@ -1,4 +1,4 @@
-import MeetupDetail from "../../components/meetups/meetupDetail";
+import MeetupDetail from "../../components/meetups/MeetupDetail";
 import { MongoClient, ObjectId } from "mongodb";
 const mongoURI =
   "mongodb+srv://vohoangec:o48ErCHMi8m8v6YS@cluster0.jd01jtz.mongodb.net/meetups?retryWrites=true&w=majority";
