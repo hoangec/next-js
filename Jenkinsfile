@@ -8,7 +8,7 @@ pipeline {
         }
         stage("test") {
             steps {
-                echo "cac lenh chat test vi duL npm run test"
+                echo "cac lenh chat test vi duL npm run test - da chinh sua tu dong"
             }
         }
         stage(deloy) {
