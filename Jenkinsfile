@@ -1,3 +1,4 @@
+def gv
 pipeline {
     agent any
     parameters {
@@ -5,11 +6,19 @@ pipeline {
         booleanParam(name: 'excuteTest',defaultValue: true, description: '')
     }
     stages {
+        stage("init") {
+            steps {
+                echo "khoi tao"
+                script{
+                    gv = load "script.groovy"
+                }
+            }
+        }
         stage("build") {
             steps {
                 echo "qua trinh cai dat goi"
-                nodejs('nodejs-18.16') {
-                    sh 'npm -v'
+                script{
+                    gv.buildApp()
                 }
             }
         }
@@ -21,6 +30,9 @@ pipeline {
             }
             steps {
                 echo "cac lenh chat test vi duL npm run test - da chinh sua tu dong"
+                script{
+                    gv.testApp()
+                }
             }
         }
         stage(deloy) {
