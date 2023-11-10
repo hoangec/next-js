@@ -1,12 +1,24 @@
 pipeline {
     agent any
+    parameters {
+        choice(name 'VERSION', choices:['1.1.0','1.2.0','2.0.0'], description: '')
+        booleanParam(name: 'excuteTest',defaultValue: true, description: '')
+    }
     stages {
         stage("build") {
             steps {
-                echo "cac lenh build app vi du npm install, npm run build"
+                echo "qua trinh cai dat goi"
+                nodejs('NodeJS 18.16.0') {
+                    sh 'yarm'
+                }
             }
         }
         stage("test") {
+            when{
+                expression{
+                    parameters.excuteTest
+                }
+            }
             steps {
                 echo "cac lenh chat test vi duL npm run test - da chinh sua tu dong"
             }
