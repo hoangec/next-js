@@ -8,8 +8,8 @@ pipeline {
         stage("build") {
             steps {
                 echo "qua trinh cai dat goi"
-                nodejs('NodeJS 18.16.0') {
-                    sh 'yarm'
+                nodejs('nodejs-18.16') {
+                    sh 'npm -v'
                 }
             }
         }
