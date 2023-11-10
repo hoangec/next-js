@@ -14,9 +14,9 @@ pipeline {
             }
         }
         stage("test") {
-            when{
+            when   {
                 expression{
-                    parameters.excuteTest
+                    params.excuteTest
                 }
             }
             steps {
