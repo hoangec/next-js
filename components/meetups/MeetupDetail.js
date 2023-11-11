@@ -3,7 +3,8 @@ import classes from './MeetupDetail.module.css';
 function MeetupDetail(props) {
   return (
     <section className={classes.detail}>
-      <p>Nội dung chi tiết meetup</p>
+      <h1>Nội dung chi tiết meetup</h1>
+
       <img
         src={props.image}
         alt={props.title}
