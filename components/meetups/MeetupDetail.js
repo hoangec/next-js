@@ -4,7 +4,7 @@ function MeetupDetail(props) {
   return (
     <section className={classes.detail}>
       <h1>Nội dung chi tiết meetup</h1>
-
+      <p>các thong tin ve mêtup</p>
       <img
         src={props.image}
         alt={props.title}
